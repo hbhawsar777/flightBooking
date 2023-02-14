@@ -12,10 +12,10 @@ app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 app.use(bodyParser.json());
 
 app.get('/', function (req, res) {
-    res.send('Hello World!');
+    res.send('Flight Data Api');
 });
 app.listen(3000, function () {
-    console.log('Example app listening on port 3000!');
+    console.log('App listening on port 3000!');
 });
 
 app.post("/getFlightDetails", async (req , res) => {
@@ -68,8 +68,8 @@ app.post("/getFlightDetails", async (req , res) => {
         res.send(JSON.stringify(flightData));
         
     }catch(error){
-        console.log("error");
         console.error(error);
+        res.status(error.body.statusCode).send(JSON.stringify(error))
     }
         
     })

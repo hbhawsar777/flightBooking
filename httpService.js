@@ -4,11 +4,7 @@ exports.sendHttpRequest = sendHttpRequest;
 
 function sendHttpRequest(options) {
     console.log("HTTP")
-    // let options = opts.options;
-    // console.log(opts.url)
-    // console.log(options.url);
     return new Promise((resolve, reject) => {
-    //   logging.log(apiReference, {HTTP_REQUEST: options});
   
       request(options, (error, response, body) => {
         if (error) {
