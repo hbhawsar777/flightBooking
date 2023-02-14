@@ -1,8 +1,13 @@
-var express = require('express');
+var express                     = require('express');
+const bodyParser                = require('body-parser');
+
 
 let httpService = require("./httpService");
 
 var app = express();
+
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
+
 
 app.get('/', function (req, res) {
   res.send('Hello World!');
