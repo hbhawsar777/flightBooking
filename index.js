@@ -20,6 +20,7 @@ app.listen(3000, function () {
 
 app.post("/getFlightDetails", async (req , res) => {
     try{
+        console.log("Request Body!!" + JSON.stringify(req.body));
         let body = {
             "query": {
                 "market": req.body.market,
