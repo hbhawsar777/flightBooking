@@ -49,6 +49,8 @@ app.post("/getFlightDetails", async (req , res) => {
                 "includedCarriersIds": []
             }
         }
+
+        console.log("Added Child Ages" + req.body.childrenAges);
         
         let options = {
             method: "POST",
