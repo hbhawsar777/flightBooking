@@ -41,7 +41,7 @@ app.post("/getFlightDetails", async (req , res) => {
                     }
                 ],
                 "adults": req.body.adults,
-                "childrenAges": [],
+                "childrenAges": req.body.childrenAges,
                 "cabinClass": req.body.cabinClass,
                 "excludedAgentsIds": [],
                 "excludedCarriersIds": [],
