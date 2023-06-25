@@ -1,12 +1,12 @@
 var express                     = require('express');
 const bodyParser                = require('body-parser');
 const cors                      = require('cors');
-
+const morgan                    = require('morgan');
 
 let httpService = require("./httpService");
 
 var app = express();
-
+app.use(morgan('dev'));
 app.use(cors());
 app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 app.use(bodyParser.json());
